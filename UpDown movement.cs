@@ -77,7 +77,7 @@ public class UpDownmovement : MonoBehaviour
      private void OnCollisionEnter2D(Collision2D bonk) //When the player touches the red wall they die and reset
  {
          if(bonk.gameObject.tag == "RedWall")
-        rgbd.position = checkpoint.transform.position;
+       SceneManager.LoadScene(1);
      }
      
 
