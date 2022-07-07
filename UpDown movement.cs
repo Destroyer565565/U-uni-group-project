@@ -90,12 +90,7 @@ public class UpDownmovement : MonoBehaviour
 
 
   }
- void OnTriggerEnter2D(Collider2D col) {
-
-            if(col.gameObject.tag == "Checkpoint1") {
-          SceneManager.Loadscene(1); }
-        
-          }
+ 
 
 
 
