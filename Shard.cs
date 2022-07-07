@@ -24,8 +24,9 @@ private void Move(float dir){
     rgbd.transform.Translate(new Vector3(dir, rgbd.velocity.y,0));
 }
   void OnCollisionEnter2D(Collision2D other) {
+      float dir = -1f
       dir = dir * -1;
-
+           
    }
 
 
