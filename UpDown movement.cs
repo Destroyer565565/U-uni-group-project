@@ -11,8 +11,7 @@ public class UpDownmovement : MonoBehaviour
    [SerializeField] private AudioSource sfx;
 
     public float speed;  
-    
-    public gameObject Checkpoint;
+    public GameObject Checkpoint;
     void Start()
     {
         
