@@ -11,12 +11,8 @@ public class Shard : MonoBehaviour
 
 
    
-   private void CheckMove() {
-       
+   
 
-       Move(dir * Time.deltaTime * speed);
-    
-   }
    
 
    private void Move(float dir)
