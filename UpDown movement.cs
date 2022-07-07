@@ -11,7 +11,8 @@ public class UpDownmovement : MonoBehaviour
    [SerializeField] private AudioSource sfx;
 
     public float speed;  
-
+    
+    public gameObject Checkpoint;
     void Start()
     {
         
@@ -74,11 +75,11 @@ public class UpDownmovement : MonoBehaviour
           rgbd.transform.Translate(new Vector3(rgbd.velocity.x, UD, 0));
       }
      
-     //private void OnCollisionEnter2D(Collision2D bonk) //When the player touches the red wall they die and reset
-    // {
-      //   if(bonk.gameObject.tag == "RedWall")
-        // Destroy(this.gameObject);
-     //}
+     private void OnCollisionEnter2D(Collision2D bonk) //When the player touches the red wall they die and reset
+ {
+         if(bonk.gameObject.tag == "RedWall")
+        rgbd.position = checkpoint.transform.position;
+     }
      
 
 
