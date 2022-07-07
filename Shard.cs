@@ -7,7 +7,7 @@ public class Shard : MonoBehaviour
 
 [SerializeField] private Rigidbody2D rgbd;
 
-public float speed
+public float speed;
 
 void Update()
 {
