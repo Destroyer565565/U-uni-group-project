@@ -74,10 +74,10 @@ public class UpDownmovement : MonoBehaviour
           rgbd.transform.Translate(new Vector3(rgbd.velocity.x, UD, 0));
       }
      
-     private void OnCollisionEnter2D(Collider2D bonk) //When the player touches the red wall they die and reset
+     private void OnCollisionEnter2D(Collision2D col) //When the player touches the red wall they die and reset
     {
-         if(bonk.gameObject.tag == "RedWall") { 
-        rgbd.position = Checkpoint.transform.position;
+         if(col.gameObject.tag == "RedWall") { 
+        rgbd.transform = Checkpoint.transform.position;
      }
      
   }
