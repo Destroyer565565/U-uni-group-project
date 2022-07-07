@@ -36,6 +36,7 @@ public class UpDownmovement : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.D))
         {
+
             dir = 1f;
         }
         
@@ -78,6 +79,8 @@ public class UpDownmovement : MonoBehaviour
      private void OnCollisionEnter2D(Collision2D col) //When the player touches the red wall they die and reset
     {
          if(col.gameObject.tag == "RedWall") { 
+        rgbd.transform.position = Checkpoint.transform.position; }
+         if(col.gameObject.tag == "Shard") { 
         rgbd.transform.position = Checkpoint.transform.position;
      }
      
@@ -93,11 +96,8 @@ public class UpDownmovement : MonoBehaviour
 
 
 
-      private void OnCollisionEnter2D(Collision2D col) {
-        if(col.gameObject.tag == "Shard") { 
-        rgbd.transform.position = Checkpoint.transform.position;
-        }
-      }
+
+      
 
 
 
