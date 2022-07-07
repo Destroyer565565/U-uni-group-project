@@ -2,40 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shard : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
+   [SerializeField] private Rigidbody2D rgbd;
+   public float dir;
+   public float speed;
+   void OnTriggerEnter2D(Collider2D col) {
 
-[SerializeField] private Rigidbody2D rgbd;
+       if(col.gameObject.tag == "Main")
+       {
+           Destroy(this.gameObject);
+       }
+   }
+   
 
-public float speed;
-
-void Update()
-{
-    CheckMove();
-}
-
-private void CheckMove(){
-    float dir = -1f;
-
-    Move(dir * Time.deltaTime * speed);
-}
-
-private void Move(float dir){
-    rgbd.transform.Translate(new Vector3(dir, rgbd.velocity.y,0));
-}
-  void OnCollisionEnter2D(Collision2D other) {
-      float dir = -1f
-      dir = dir * -1;
-           
+   void Update() {
+    rgbd.transform.Translate(rgbd.velocity.x * dir * speed * Time.deltaTime,0);
    }
 
+   void OnCollisionEnter2D(Collision2D other) {
+      dir = dir * -1;
 
-
-
-
-
-
-
-
-
+   }
 }
