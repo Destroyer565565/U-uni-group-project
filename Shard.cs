@@ -7,13 +7,7 @@ public class Enemy : MonoBehaviour
    [SerializeField] private Rigidbody2D rgbd;
    public float dir;
    public float speed;
-   void OnTriggerEnter2D(Collider2D col) {
-
-       if(col.gameObject.tag == "Main")
-       {
-           Destroy(this.gameObject);
-       }
-   }
+  
    
 
    void Update() {
