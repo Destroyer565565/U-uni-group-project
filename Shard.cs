@@ -10,14 +10,10 @@ public class Enemy : MonoBehaviour
   
    
 
-   void Update() {
-    rgbd.transform.Translate(dir * speed * Time.deltaTime, rgbd.velocity.y,0);
-
-     
-   }
+   
 
    void OnCollisionEnter2D(Collision2D other) {
       dir = dir * -1;
-  Move(dir * Time.deltaTime * speed);
+   rgbd.transform.Translate(dir * speed * Time.deltaTime, rgbd.velocity.y,0);
    }
 }
