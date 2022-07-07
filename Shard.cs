@@ -9,12 +9,9 @@ public class Shard : MonoBehaviour
    public float speed;
 
 
- void Update()
-   {
-       CheckMove()
-   }
+
    
-   private void CheckMove() {
+   private void CheckMove(); {
        float dir =-1f
  Move(dir * Time.deltaTime * speed);
     
@@ -23,6 +20,8 @@ public class Shard : MonoBehaviour
 
    void Update() {
     rgbd.transform.Translate(dir * speed * Time.deltaTime, rgbd.velocity.y,0);
+
+    CheckMove();
    }
 
    void OnCollisionEnter2D(Collision2D other) {
