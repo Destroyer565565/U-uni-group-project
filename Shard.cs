@@ -2,12 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Shard : MonoBehaviour
 {
    [SerializeField] private Rigidbody2D rgbd;
    public float dir;
    public float speed;
+
+
+ void Update()
+   {
+       CheckMove()
+   }
    
+   private void CheckMove() {
+       float dir =-1f
+ Move(dir * Time.deltaTime * speed);
+    
+   }
    
 
    void Update() {
