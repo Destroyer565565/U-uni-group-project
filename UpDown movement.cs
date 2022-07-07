@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UpDownmovement : MonoBehaviour
 {
@@ -77,13 +78,13 @@ public class UpDownmovement : MonoBehaviour
      private void OnCollisionEnter2D(Collision2D col) //When the player touches the red wall they die and reset
     {
          if(col.gameObject.tag == "RedWall") { 
-        rgbd.transform = Checkpoint.transform.position;
+        rgbd.transform.position = Checkpoint.transform.position;
      }
      
 
 
   }
-void OnTriggerEnter2D(Collider2D col) {
+ void OnTriggerEnter2D(Collider2D col) {
 
             if(col.gameObject.tag == "Checkpoint1") {
           SceneManager.Loadscene(2);
@@ -92,7 +93,11 @@ void OnTriggerEnter2D(Collider2D col) {
 
 
 
-
+      private void OnCollisionEnter2D(Collision2D col) {
+        if(col.gameObject.tag == "Shard") { 
+        rgbd.transform.position = Checkpoint.transform.position;
+        }
+      }
 
 
 
