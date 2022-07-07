@@ -74,10 +74,12 @@ public class UpDownmovement : MonoBehaviour
           rgbd.transform.Translate(new Vector3(rgbd.velocity.x, UD, 0));
       }
      
-     private void OnCollisionEnter2D(Collision2D bonk) //When the player touches the wall they die and reset
-     {
-         if(bonk.gameObject.tag == "")
-     }
+     //private void OnCollisionEnter2D(Collision2D bonk) //When the player touches the red wall they die and reset
+    // {
+      //   if(bonk.gameObject.tag == "RedWall")
+        // Destroy(this.gameObject);
+     //}
+     
 
 
 
@@ -91,7 +93,5 @@ public class UpDownmovement : MonoBehaviour
 
 
 }
-
-
 
 
