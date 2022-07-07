@@ -15,7 +15,7 @@ public class UpDownmovement : MonoBehaviour
     public GameObject Checkpoint;
 
      public void LoadB(int sceneANumber);
-     
+
     void Start()
     {
         
@@ -93,7 +93,21 @@ public class UpDownmovement : MonoBehaviour
  void OnTriggerEnter2D(Collider2D col) {
 
             if(col.gameObject.tag == "Checkpoint1") {
-          SceneManager.Loadscene(1);
-            }
+          SceneManager.Loadscene(1); }
+        
           }
+
+
+
+
+
+      
+
+
+
+
+
+
+}
+
 
