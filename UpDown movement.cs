@@ -1,46 +1,31 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour
+public class UpDownmovement : MonoBehaviour
 {
     // Start is called before the first frame update
 
+   [SerializeField] private Rigidbody2D rgbd;
+
+   [SerializeField] private AudioSource sfx;
+
+    public float speed;  
+    public GameObject Checkpoint;
+    void Start()
+    {
+        
+    }
+
     // Update is called once per frame
-
-
-    [SerializeField] private Rigidbody2D rgbd;
-
-    [SerializeField] private AudioSource sfx;
-
-    public float speed;
-    public Vector2 jump;
-   
-   
     void Update()
     {
-        
-        Jump();
+        CheckMove(); // A and D
 
-        CheckMove();
-       
-       
+        UpdownM(); // W and S
     }
-    
-    private void Jump()
-    {
-        if(Input.GetKeyDown(KeyCode.W))
-     {
-        rgbd.AddForce(jump, ForceMode2D.Impulse);
-     }
-        //rgbd.AddForce(new Vector2(), ForceMode2D.Impulse);
-        
-        //sfx.Play();
-        
-    }
-    
 
-    private void CheckMove()
+    private void CheckMove() // A and D
     {
 
         float dir = 0f;
@@ -61,28 +46,59 @@ public class CharacterMovement : MonoBehaviour
         Move(dir * Time.deltaTime * speed);
 
     }
-
     private void Move(float dir)
     {
         rgbd.transform.Translate(new Vector3(dir, rgbd.velocity.y,0));
     }
+     
+     private void UpdownM() // W and S
+     {
 
-
-    void OnCollisionEnter2D(Collision2D col) {
-
-
-            if(col.gameObject.tag == "Finish") 
-            { 
-                Destroy(this.gameObject);
-            }
-             if(col.gameObject.tag == "Enemy") {
-                Destroy(this.gameObject);
-             }
+         float UD = 0f; // Up and down
+         if(Input.GetKey(KeyCode.W)) {
+             UD = 1f;
+         }
+         if(Input.GetKey(KeyCode.S)) {
+             UD = -1f;
+         }
+         if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        {
+            UD = 0f; 
         }
+         WD(UD * Time.deltaTime * speed); // Up And down
+        
+     }
+      
+      private void WD(float UD)
+      {
+          rgbd.transform.Translate(new Vector3(rgbd.velocity.x, UD, 0));
+      }
+     
+     private void OnCollisionEnter2D(Collision2D col) //When the player touches the red wall they die and reset
+    {
+         if(col.gameObject.tag == "RedWall") { 
+        rgbd.transform = Checkpoint.transform.position;
+     }
+     
 
-          void OnTriggerEnter2D(Collision2D col) {
 
-            if(col.gameObject.tag == "Checkpoint1")
+  }
+void OnTriggerEnter2D(Collision2D col) {
+
+            if(col.gameObject.tag == "Checkpoint1") {
           SceneManager.Loadscene(2)
+            }
           }
+
+
+
+
+
+
+
+
+
+
 }
+
+
