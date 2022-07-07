@@ -65,7 +65,7 @@ public class UpDownmovement : MonoBehaviour
         {
             UD = 0f; 
         }
-         WD(dir * Time.deltaTime * speed); // Up And down
+         WD(UD * Time.deltaTime * speed); // Up And down
         
      }
       
@@ -76,7 +76,7 @@ public class UpDownmovement : MonoBehaviour
      
      private void OnCollisionEnter2D(Collision2D bonk) //When the player touches the wall they die and reset
      {
-         
+         if(bonk.gameObject.tag == "")
      }
 
 
@@ -91,5 +91,7 @@ public class UpDownmovement : MonoBehaviour
 
 
 }
+
+
 
 
