@@ -6,17 +6,7 @@ using UnityEngine.SceneManagement;
 public class Shard : MonoBehaviour
 {
    [SerializeField] private Rigidbody2D rgbd;
-   public void LoadB(int sceneAnumber); {
-        void OnTriggerEnter2D(Collider2D col) {
-
-       if(col.gameObject.tag == "Player")
-       {
-           
-           SceneManager.Loadscene(1);
-
-       }
-        }
-   }
+ 
    public float dir;
    public float speed;
 
