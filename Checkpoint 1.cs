@@ -9,7 +9,7 @@ public class Checkpoint1 : MonoBehaviour
   void OnTriggerEnter2D(Collider2D col)
   {
       if(gameObject.tag == "Player") {
-          SceneManager.Loadscene(1)
+          SceneManager.Loadscene(Level2);
 
       }
   }
