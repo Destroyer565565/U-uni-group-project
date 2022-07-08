@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Shard : MonoBehaviour
 {
    [SerializeField] private Rigidbody2D rgbd;
+   public void LoadB(int sceneANumber);
    public float dir;
    public float speed;
    void OnTriggerEnter2D(Collider2D col) {
