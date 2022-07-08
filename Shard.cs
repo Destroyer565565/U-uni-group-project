@@ -15,6 +15,7 @@ public class Shard : MonoBehaviour
            SceneManager.Loadscene(1);
 
        }
+        }
    }
    public float dir;
    public float speed;
