@@ -7,14 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class Checkpoint1 : MonoBehaviour
 {
-    void Start()
-    {
-        Debug.Log("LoadSceneB");
-    }
-
+ 
     public void LoadB(int sceneANumber)
     {
-        if(gameObject.tag == "Player") {
+         void OnTriggerEnter2D(Collider2D col)
+        {
+            
+        
+        if(col.gameObject.tag == "Player") {
         SceneManager.LoadScene(1);
         }
     }
