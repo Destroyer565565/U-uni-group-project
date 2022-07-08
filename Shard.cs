@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement
+using UnityEngine.SceneManagement;
 
 public class Shard : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class Shard : MonoBehaviour
        if(col.gameObject.tag == "Player")
        {
            
-           SceneManager.Loadscene(1)
+           SceneManager.Loadscene(1);
 
        }
    }
