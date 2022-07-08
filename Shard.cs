@@ -18,7 +18,11 @@ public class Shard : MonoBehaviour
 
        }
    }
-   
+   private void Move(float dir)
+    {
+        rgbd.transform.Translate(new Vector3(dir, rgbd.velocity.y,0));
+    }
+     
 
    void Update() {
     rgbd.transform.Translate(dir * speed * Time.deltaTime, rgbd.velocity.y,0);
