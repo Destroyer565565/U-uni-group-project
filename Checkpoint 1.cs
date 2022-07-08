@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Checkpoint1 : MonoBehaviour
 {
-  public void LoadB(int sceneAnumber); {
+  public void LoadB(int sceneAnumber) {
   void OnTriggerEnter2D(Collider2D col)
   {
       if(gameObject.tag == "Player") {
