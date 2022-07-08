@@ -1,7 +1,3 @@
-// SceneB.
-// SceneB is given the sceneBuildIndex of 0 which will
-// load SceneA from the Build Settings
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +6,7 @@ public class Checkpoint1 : MonoBehaviour
  
     public void LoadB(int sceneANumber)
     {
-         void OnTriggerEnter2D(Collider2D col)
+         void OncollsionEnter2D(Collision2D col)
         {
             
         
@@ -18,4 +14,5 @@ public class Checkpoint1 : MonoBehaviour
         SceneManager.LoadScene(1);
         }
     }
+}
 }
