@@ -6,10 +6,8 @@ using UnityEngine.SceneManagement;
 public class Shard : MonoBehaviour
 {
    [SerializeField] private Rigidbody2D rgbd;
-   public void LoadB(int sceneANumber);
-   public float dir;
-   public float speed;
-   void OnTriggerEnter2D(Collider2D col) {
+   public void LoadB(int sceneAnumber); {
+        void OnTriggerEnter2D(Collider2D col) {
 
        if(col.gameObject.tag == "Player")
        {
@@ -18,6 +16,9 @@ public class Shard : MonoBehaviour
 
        }
    }
+   public float dir;
+   public float speed;
+
    private void Move(float dir)
     {
         rgbd.transform.Translate(new Vector3(dir, rgbd.velocity.y,0));
